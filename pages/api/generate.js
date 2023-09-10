@@ -12,7 +12,23 @@ export default function handler(req, res) {
   switch (method) {
     case "GET":
       var compiled = ejs.compile(fs.readFileSync(process.cwd() + "/public/pdf.html", "utf8"));
-      var html = compiled({ address1: "bangkok", state1: "TH", invoiceNo: "123445590" });
+      var html = compiled({
+        address1: "bangkok",
+        state1: "TH",
+        invoiceNo: "123445590",
+        content: [
+          {
+            description: "description",
+            qty: 1,
+            amount: 1000,
+          },
+          {
+            description: "description2",
+            qty: 2,
+            amount: 2000,
+          },
+        ],
+      });
 
       //   pdf.create(html, { format: "a4" }).toFile("./download.pdf", function (err, response) {
       //     if (err) return console.log(err);
