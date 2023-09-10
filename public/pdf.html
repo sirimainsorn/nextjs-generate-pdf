@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        border-spacing: 0;
+      }
+
+      th.address {
+        padding: 1mm;
+        border: 1px solid #000;
+        font-weight: 400;
+        text-align: left;
+      }
+
+      th.address p {
+        margin: 0 !important;
+      }
+
+      .invoice-no {
+        padding: 1mm;
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th class="address" width="45%">
+            <p>Address 1</p>
+            <p><%= address1 %></p>
+            <p><%= state1 %></p>
+          </th>
+          <th width="65%" rowspan="3">
+            <div class="invoice-no">
+              <div style="border: 1px solid #000">Invoice No: <%= invoiceNo %></div>
+            </div>
+          </th>
+        </tr>
+        <tr>
+          <th class="address" width="45%">
+            <p>Address 1</p>
+          </th>
+        </tr>
+        <tr>
+          <th class="address" width="45%">
+            <p>Address 1</p>
+          </th>
+        </tr>
+      </thead>
+    </table>
+  </body>
+</html>
